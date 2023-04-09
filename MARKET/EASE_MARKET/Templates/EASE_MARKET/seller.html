@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+<title>Sell </title>
+{% endblock %}
+{% block body %}
+
+
+<link rel="stylesheet" href="{% static 'css/seller.css' %}">
+<div class="seller-container">
+  <h1>Enter Details </h1>
+  <form class="seller-form" action="{% url 'seller' %}" method="post">
+    {% csrf_token %}
+    {% if messages %}
+    <ul class="messages">
+      {% for message in messages %} 
+      <li {% if  message.tags %} class="{{ message.tags }}" {% endif %} > {{ message }}</li>
+      {% endfor %} 
+    </ul>
+    {% endif %}
+    <input class="seller-form-input" name="username" type="text" placeholder="username" required>
+    <input class="seller-form-input" name="email" type="email" placeholder="Email" required>
+    <input class="seller-form-input" name="id_number" type="number" placeholder="id no" required>
+
+    <label for="myFile" class="custom-file-upload">
+      <i class="fas fa-cloud-upload-alt"></i> Upload Screenshot
+    </label>
+    <input type="file" class="img" id="myFile" name="img" required>
+    
+
+    <input class="seller-form-input"  name="current_location" type="current_location" placeholder="Your location" required>
+    <input class="seller-form-input" type="number" placeholder="Price" name="price" required>
+    <input class="seller-form-input" type="number" name="phone_no" placeholder="+254" required>
+    <input class="seller-form-input" type="text" name="address" placeholder="Address" required>
+    <button class="seller-form-submit" type="submit">Sell</button>
+  </form>
+</div>
+{% endblock %}

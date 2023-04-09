@@ -1,0 +1,52 @@
+
+/* services.css */
+.services {
+  background: linear-gradient(to right, wheat, rgb(157, 34, 228));
+  padding: 11% 0;
+}
+
+.services .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.services .section-heading {
+  text-align: center;
+  font-size: 5rem;
+  margin-bottom: 100px;
+  font-weight: bold;
+}
+
+.services-grid {
+  display: flex;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 300px;
+  justify-items: auto;
+}
+
+.service {
+  text-align: center;
+}
+
+.service i {
+  font-size: 4rem;
+  color: #be160a;
+  margin-bottom: 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+.service:hover i {
+  transform: rotate(360deg);
+  color: orange;
+}
+
+.service h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.service p {
+  font-size: 1.1rem;
+  color: blue;
+}

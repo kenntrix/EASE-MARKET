@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+<title>Services  </title>
+{% endblock %}
+{% block body %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/services.css' %}">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-xe9X2IbswnEoJ0QieJSrZo5r5M5c5VK5ipO88J1yFkaXmnG7hqKdO/smpU6bSf51SdhU/oGpsk6vxQxevJVvCQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<section class="services">
+  <div class="container">
+    <h1 class="section-heading">Our Services</h1>
+    <div class="services-grid">
+      <div class="service">
+        <i class="fas fa-truck"></i>
+        <h2>Fast Delivery</h2>
+        <p>Get your products delivered to your doorstep in record time.</p>
+      </div>
+      <div class="service">
+        <i class="fas fa-money-bill-wave"></i>
+        <h2>Secure Payments</h2>
+        <p>Enjoy hassle-free and secure payment options for your purchases.</p>
+      </div>
+      <div class="service">
+        <i class="fas fa-heart"></i>
+        <h2>Customer Care</h2>
+        <p>Our customer support team is available to assist you 24/7.</p>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

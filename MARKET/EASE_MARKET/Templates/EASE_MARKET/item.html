@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+<title>{{ item.item }} Detail</title>
+{% endblock %}
+
+{% block body %}
+
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <img src="{{ item.image.url }}" alt="Product Image" class="img-fluid product-image">
+      <img src="{{ item.image.url }}" alt="Product Image" class="img-fluid product-image">
+    </div>
+    
+    <div class="col-md-6">
+      <div class="item-details">
+        <h1 class="product-title">{{ item.item }}</h1>
+        <p class="product-description">{{ item.description }}</p>
+        <h3 class="product-price">Price : Ksh.{{ item.price }}</h3>
+        <ul class="product-details">
+          <li><strong>Category:</strong> {{ item.get_category_display }}</li>
+          <li><strong>Brand:</strong> {{ item.brand }}</li>
+          <li><strong>Model:</strong> {{ item.model }}</li>
+          <li><strong>Color:</strong> {{ item.color }}</li>
+        </ul>
+        <button class="btn btn-primary contact-seller-btn">Contact Seller</button>
+      </div>
+
+      <div class="seller-details mt-5">
+        <h2>Seller Details</h2>
+        <ul class="seller-info">
+          <li><strong>Username:</strong> {{ item.seller.username }}</li>
+          <li><strong>Current Location:</strong> {{ item.seller.current_location }}</li>
+          <li><strong>Email:</strong> {{ item.seller.email }}</li>
+          <li><strong>Phone:</strong> {{ item.seller.phone_no }}</li>
+        </ul>
+      </div>
+
+
+    </div>
+  </div>
+</div>
+{% endblock %}

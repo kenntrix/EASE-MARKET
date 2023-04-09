@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+<title>Ease Market </title>
+{% endblock %}
+{% block body %}
+
+                 <!-- {% url 'item_detail' pk=item.pk %} -->
+
+
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+
+<main class="body ">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-3 ">
+        <ul class="list-group mt-5">
+          <li class="list-group-item active">Categories</li>
+          <li class="list-group-item">electronics</li>
+          <li class="list-group-item">clothing</li>
+          <li class="list-group-item">sports</li>
+          <li class="list-group-item">Fashion</li>
+          <li class="list-group-item">phones and tablets</li>
+        </ul>
+        <form class="mt-5" method="GET">
+          <input type="text" name="search_query" class="form-control" placeholder="Search Products">
+          <button type="submit" class="btn btn-primary mt-3">Search</button>
+        </form>
+      </div>
+
+      <div class="col-md-9 d-flex">
+        <div class="card-deck">
+          {% for product in products %}
+          <div class="card">
+            <img
+              class="card-img-top"
+              src="{% static product.image %}"
+              alt="{{ product.name }}"
+            />
+            <div class="card-body">
+              <h5 class="card-title">{{ product.name }}</h5>
+              <p class="card-text">{{ product.description }}</p>
+              <p class="card-text">${{ product.price }}</p>
+              <a href="{% url 'details' product.id %}">
+                <button class="btn-buy">buy</button>
+              </a>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}
+
+
+
+
+        context = {'categories': categories}
+        return render(request, , context);
+    else:
+        messages.error(request,"Login to continue ...")
+        return redirect('login')

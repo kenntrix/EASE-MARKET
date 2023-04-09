@@ -1,0 +1,32 @@
+.product-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.product-description {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.product-price {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.product-details {
+  list-style-type: none;
+  margin-bottom: 2rem;
+}
+
+.product-details li {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.btn-primary {
+  font-size: 1.25rem;
+  font-weight: bold;
+  padding: 1rem 2rem;
+  margin-top: 2rem;
+}

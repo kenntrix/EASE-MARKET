@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+<title>About us  </title>
+{% endblock %}
+{% block body %}
+<link rel="stylesheet" href="{% static 'css\about.css'  %}">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-xe9X2IbswnEoJ0QieJSrZo5r5M5c5VK5ipO88J1yFkaXmnG7hqKdO/smpU6bSf51SdhU/oGpsk6vxQxevJVvCQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+<div class="about">
+<section class="about-section">
+  <div class="about-image">
+    <img src="{% static 'images/lappy.webp' %}" alt="About Us">
+  </div>
+  <div class="about-content">
+    <h2>Our Story</h2>
+    <p>Founded in 2023 by Kennedy Wambua Mbithe, EASE_MARKET Website has grown from a small startup to a leading provider of innovative products and services.<br>
+    Our mission is to help people achieve their goals and improve their quality of life, and we're proud to have helped thousands of customers along the way.<br>
+    We are a team of passionate individuals who are dedicated to providing the best services to our clients.</p>
+    <ul class="icon-list">
+      <li><i class="fas fa-laptop-code"></i> Web Development</li>
+      <li><i class="fas fa-mobile-alt"></i> Mobile Development</li>
+      <li><i class="fas fa-chart-line"></i> Analytics & Reporting</li>
+    </ul>
+  </div>
+ 
+</section>
+
+<section class="team-section">
+  <div class="team-image">
+    <img src="{% static 'images/team.jpg'%}" alt="Our Team">
+  </div>
+  <div class="team-content">
+    <h2>Our Team</h2>
+    <p>We have a talented and diverse team of professionals who are dedicated to providing the best solutions for our clients.<br>
+    Our team is made up of experienced professionals who are passionate about what they do.</p>
+    <ul class="icon-list">
+      <li><i class="fas fa-users"></i> Experienced Professionals</li>
+      <li><i class="fas fa-briefcase"></i> Industry Experts</li>
+      <li><i class="fas fa-trophy"></i> Award-Winning Team</li>
+    </ul>
+  </div>
+</section>
+</div>
+
+{% endblock %}

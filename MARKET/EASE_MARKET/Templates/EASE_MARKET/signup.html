@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+<title>Signin</title>
+{% endblock %}
+
+
+{% block body %}
+<script src="{% static 'js/log.js' %}"></script>
+<link rel="stylesheet" href="{% static 'css/register.css' %}">
+
+<div class="register">
+
+
+<div class="register-wrapper">
+
+  <span class="icon-close"><ion-icon name="close-outline"></ion-icon></span>
+  <div class="form-box register">
+    <h2>Create An Account </h2>
+
+    <form action="{% url 'signin' %}" method="post">
+      {% csrf_token %}
+      <div class="input-box">
+        {% if messages %}
+        <ul class="messages">
+          {% for message in messages %}
+          <li {% if message.tags %} class="{{ message.tags }}" {% endif %}> {{ message }}</li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+        <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+        <input type="text" name="username" required>
+        <label>Username</label>
+      </div>
+      <div class="input-box">
+        <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
+        <input type="email" name="email" required>
+        <label>Email</label>
+      </div>
+      <div class="input-box">
+        <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+        <input type="password" name="password" required >
+        <label>Password</label>
+      </div>
+      <div class="input-box">
+        <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+        <input type="password" name="password_confirmation" required>
+        <label>Password Cornfirmation</label>
+      </div>
+
+      <div class="remember-forgot">
+        <label><input type="checkbox">
+          I agree to the terms & conditions</label><br>
+        <button type="submit" class="btn">Register</button>
+        <div class="log-register">
+          <p>Already have an account?<a href=" login " class="log-link">Login</a></p>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+<title>Ease Market</title>
+{% endblock %}
+{% block body %}
+
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+
+<main class="body ">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-3 ">
+        <ul class="list-group mt-5">
+          <li class="list-group-item active">Categories</li>
+          {% for category in categories %}
+              <li class="list-group-item">{{ category.1 }}</li>
+          {% endfor %}
+      </ul>
+        <form class="mt-5" method="GET">
+            <input type="text" name="search_query" class="form-control" placeholder="Search Products">
+            <button type="submit" class="btn btn-primary mt-3">Search</button>
+        </form>
+        <a href="{% url  'seller' %}">
+            <button class="btn btn-primary mt-3">Sell Your Products</button>
+        </a>
+    </div>
+    
+    <div class="col-md-9 d-flex">
+      <div class="card-deck">
+        {% for good in goods %}
+        <div class="card">
+          <img class="card-img-top" src="{{ good.image.url }}" alt="{{ good.item }}">
+          <div class="card-body">
+            <h5 class="card-title">{{ good.item }}</h5>
+            <p class="card-text">{{ good.description }}</p>
+            <p class="card-text-price">Ksh.{{ good.price }}</p>
+            <p class="card-text-seller">{{ good.seller }}</p>
+            <a href="{% url 'item_detail' pk=good.pk %}">
+              <button class="btn btn-primary mt-3">buy product</button>
+          </a>                     
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</main>
+
+{% endblock %}
